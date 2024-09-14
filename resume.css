@@ -1,0 +1,258 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #007bff;
+}
+.containerr {
+  width: 100%;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  background: transparent;
+  color: #fff;
+}
+.containerr p {
+  font-family: "Open Sans", sans-serif;
+}
+.containerr::before {
+  content: "";
+  position: fixed;
+  background: url(Images/bg.jpg) top right no-repeat;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+/* -----------------Start Nav Bar Style ------------------------ */
+
+/* -----------------Start Nav Bar Style ------------------------ */
+/* -----------------Start Nav Bar Style ------------------------ */
+nav {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+h2 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* -----------------End Nav Bar Style ------------------------ */
+/* -----------------End Nav Bar Style ------------------------ */
+/* ------------------ Start Content Box Style -------------------- */
+.content {
+  width: 87%;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 2% 6.5%;
+  padding: 30px 25px;
+}
+.topTxt {
+  width: 100%;
+  color: #fff;
+}
+.topTxt h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+}
+.topTxt h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--main-color);
+  margin: 4px 10px;
+}
+.topTxt p {
+  margin-bottom: 25px;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+.conter {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.conter .box {
+  width: 46%;
+  height: fit-content;
+  padding-left: 20px;
+  margin: 20px 0;
+  position: relative;
+}
+.conter .box::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  background-color: var(--main-color);
+  left: 0;
+  bottom: 0;
+}
+.conter #one::after {
+  height: 89%;
+}
+.box h2 {
+  font-family: "Raleway", "sans-serif";
+  font-size: 30px;
+  font-weight: 700;
+}
+.box h3 {
+  color: var(--main-color);
+  margin: 20px 0;
+  position: relative;
+  font-weight: 600;
+}
+#three h3 {
+  font-size: 23px;
+  font-weight: 700;
+}
+#three p {
+  margin-top: 10px;
+}
+.conter #three::after {
+  height: 78.5%;
+}
+.box h3::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -27px;
+  background-color: #4b4bfb;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.box h4 {
+  margin: 15px 0 10px;
+}
+.box p {
+  line-height: 1.5;
+  font-size: 15px;
+  padding: 7px 0;
+}
+.box li {
+  font-size: 14px;
+  padding: 7px 0;
+}
+.box span {
+  background-color: #aaaaaa33;
+  padding: 7px 10px;
+}
+.conter #four::after {
+  height: 84%;
+}
+.conter #two::after {
+  height: 80%;
+}
+/* ------------------ End Content Box Style -------------------- */
+
+/* ------------------------------------------------------ */
+/* @media only screen and (min-width: 768px) {
+  .collapse ul li {
+    position: relative;
+  }
+  .collapse ul li::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 50px;
+    background-color: var(--main-color);
+    width: 0;
+    height: 3px;
+    transition: 0.5s;
+  }
+  .collapse ul li:hover::after {
+    width: 30%;
+  }
+  .collapse ul li:nth-child(3)::after {
+    width: 30%;
+  }
+} */
+@media only screen and (max-width: 768px) {
+  .collapse ul li {
+    transition: 0.5s;
+  }
+  .collapse ul li:hover {
+    background-color: #cccccc22;
+  }
+  .collapse ul li:nth-child(3) {
+    background-color: #cccccc22;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  #checkbox {
+    display: none;
+  }
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+}

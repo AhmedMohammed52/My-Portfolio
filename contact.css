@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #007bff;
+}
+.containerr {
+  width: 100%;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  background: transparent;
+  color: #fff;
+}
+.containerr p {
+  font-family: "Open Sans", sans-serif;
+}
+.containerr::before {
+  content: "";
+  position: fixed;
+  background: url(Images/bg.jpg) top right no-repeat;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* -----------------Start Nav Bar Style ------------------------ */
+nav {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* -----------------End Nav Bar Style ------------------------ */
+/* ------------------ Start Content Box Style -------------------- */
+.content {
+  width: 87%;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.821);
+  margin: 2% 6.5%;
+  padding: 30px 25px;
+}
+.topTxt {
+  width: 100%;
+  color: #fff;
+}
+.topTxt h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+}
+.topTxt h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--main-color);
+  margin: 4px 10px;
+}
+.topTxt p {
+  margin-bottom: 25px;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+.conter {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.conter .box {
+  width: 48%;
+  height: 100px;
+  background-color: #17181e;
+}
+.conter #field {
+  width: 100%;
+  height: fit-content;
+  background-color: #17181e;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#field input {
+  padding: 14px 20px;
+  background-color: #262627;
+  color: #fff;
+  outline: none;
+  border: none;
+  transition: 0.5s;
+}
+#field input:focus,
+#field textarea:focus {
+  background-color: #373739;
+}
+#field textarea {
+  height: 150px;
+  outline: none;
+  border: none;
+  background-color: #262627;
+  color: #fff;
+  padding: 20px;
+  transition: 0.5s;
+}
+#field button {
+  font-weight: 600;
+  padding: 15px 20px;
+  margin: auto;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#field button:hover {
+  background-color: #4949fa;
+}
+/* ---------------------------------------- */
+
+.conter .box {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.conter .box .icon {
+  width: 70px;
+  height: 70px;
+  background-color: #373739;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conter .box .icon i {
+  color: var(--main-color);
+  font-size: 30px;
+}
+.conter .box .breif h3 {
+  font-family: "Raleway", "sans serif";
+  font-size: 20px;
+  color: #ffffff80;
+  font-weight: 700;
+  margin: 10px 0 8px;
+}
+.conter .box .breif p {
+  color: #fff;
+  line-height: 24px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.conter .box .breif .socialLinks a {
+  text-decoration: none;
+  padding: 0 5px;
+}
+.conter .box .breif .socialLinks a i {
+  font-size: 22px;
+  color: #fff;
+  transition: 0.5s;
+}
+.conter .box .breif .socialLinks a i:hover {
+  color: #ffffff90;
+}
+
+/* ------------------------------------------------------ */
+
+@media only screen and (max-width: 768px) {
+  .collapse ul li {
+    transition: 0.5s;
+  }
+  .collapse ul li:hover {
+    background-color: #cccccc22;
+  }
+  .collapse ul li:nth-child(5) {
+    background-color: #cccccc22;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  #checkbox {
+    display: none;
+  }
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+}
