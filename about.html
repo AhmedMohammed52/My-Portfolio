@@ -30,11 +30,14 @@
 
       <nav class="navbar navbar-expand-lg col-12 p-0 m-0">
         <div class="container pt-2 pb-2 m-0 col-12">
-          <a class="navbar-brand col-4 pl-sm-5 ml-lg-5" href="./index.html">
+          <a
+            class="navbar-brand col-4 pl-lg-5 pl-sm-2 ml-lg-5"
+            href="./index.html"
+          >
             <h2><span class="text-primary">A</span>hmed Mohammed</h2></a
           >
           <button
-            class="navbar-toggler bg-transparent border-0 pr-5"
+            class="navbar-toggler bg-transparent border-0 pr-md-5 pr-sm-4"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -64,16 +67,13 @@
                   >Home</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-light ml-5" href="./about.html"
+              <li class="nav-item" id="about">
+                <a class="nav-link text-light ml-5 active" href="./about.html"
                   >About</a
                 >
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link text-light ml-5"
-                  href="./resume.html"
-                  id="resume"
+                <a class="nav-link text-light ml-5" href="./resume.html"
                   >Resume</a
                 >
               </li>
@@ -110,7 +110,10 @@
             </div>
           </div>
           <div class="row m-0">
-            <img src="Images/IMG_0891.HEIC" class="col-lg-5 col-sm-12 pb-2 rounded" />
+            <img
+              src="Images/3.mo.png"
+              class="col-lg-4 col-sm-12 pb-2 rounded"
+            />
             <div class="title col-lg-7 col-sm-12">
               <div class="row">
                 <h2 class="pt-sm-4 pl-sm-3">Front - End Developer</h2>
@@ -152,7 +155,8 @@
                   </li>
                   <li class="pb-sm-3">
                     <i class="fa-solid fa-angles-right"></i>
-                    <strong>Email :</strong> amohammed147258@gmail.com
+                    <strong>Email :</strong>
+                    <span class="li">amohammed147258@gmail.com</span>
                   </li>
                 </ul>
               </div>
@@ -173,7 +177,7 @@
               <p class="col-12 pl-sm-1">Technical Skills</p>
               <div class="boxies col-12">
                 <div class="box col-lg-6 col-sm-12 p-sm-0">
-                  <h2 class="pb-2">Client-Side Technologies (CST)</h2>
+                  <h2 class="pb-2">Client-Side Technologies</h2>
                   <div class="top">
                     <span>HTML</span>
                     <span>95%</span>
@@ -201,7 +205,7 @@
                   <div class="progress5"></div>
                 </div>
                 <div class="box col-lg-5 col-sm-12 p-sm-0">
-                  <h2 class="pb-2">Programming Language Basics</h2>
+                  <h2 class="pb-2">Programming Language</h2>
                   <div class="top">
                     <span>C++</span>
                     <span>20%</span>
@@ -232,7 +236,7 @@
                   <div class="progress5"></div>
                 </div>
                 <div class="box col-lg-5 col-sm-12 p-sm-0">
-                  <h2 class="pb-2">Teamwork Techniques</h2>
+                  <h2 class="pb-2" id="team">Teamwork Techniques</h2>
                   <div class="top">
                     <span>GitHub</span>
                     <span>50%</span>
@@ -291,6 +295,8 @@
           </div>
         </section>
       </div>
+
+      <!-- ---------------------- End Content Box ---------------------- -->
     </div>
 
     <!-- -------------------- Bootsrap Scribt Links ------------------- -->

@@ -35,11 +35,26 @@ nav {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
 }
-
+.container {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 999999999999999999999999999999;
+}
 h2 {
   color: #fff;
   font-size: 30px;
   font-weight: bold;
+}
+nav ul li {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+nav ul li:hover {
+  opacity: 1;
+}
+#projects {
+  opacity: 1;
 }
 
 /* -----------------End Nav Bar Style ------------------------ */
@@ -52,6 +67,8 @@ h2 {
   background-color: rgba(0, 0, 0, 0.821);
   margin: 2% 6.5%;
   padding: 30px 25px;
+  position: relative;
+  top: 60px;
 }
 .topTxt {
   width: 100%;
@@ -118,6 +135,11 @@ h2 {
   color: #fff;
   font-size: 14px;
 }
+.conter .box .title p .post {
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.5;
+}
 .conter .box .title h2 {
   font-size: 30px;
   font-family: "Raleway", "sans-serif";
@@ -146,8 +168,14 @@ h2 {
 .conter .box .icon:hover i {
   color: #fff;
 }
-/* -------------------------------------  */
+
+/* ------------------------------ Mobile Style ----------------------------- */
+
 @media only screen and (max-width: 768px) {
+  .content {
+    width: 100%;
+    margin: 25px 0;
+  }
   .collapse ul li {
     transition: 0.5s;
   }
@@ -218,5 +246,38 @@ h2 {
   #checkbox:checked + .toggle {
     transition-duration: 0.5s;
     transform: rotate(180deg);
+  }
+  nav h2 {
+    font-size: 25px;
+  }
+  .topTxt p {
+    font-size: 24px;
+  }
+  .conter .box {
+    height: fit-content;
+  }
+}
+
+/* ------------------------------ Desktop Style ----------------------------- */
+
+@media screen and (min-width: 993px) {
+  .nav-item {
+    position: relative;
+  }
+  .nav-item::after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+  }
+  #projects::after {
+    width: 30%;
+  }
+  .nav-item:hover::after {
+    width: 30%;
   }
 }

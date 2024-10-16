@@ -32,18 +32,32 @@
 /* -----------------Start Nav Bar Style ------------------------ */
 nav {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+.container {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 999999999999999999999999999999;
+  overflow: hidden;
+}
 h2 {
   color: #fff;
   font-size: 30px;
   font-weight: bold;
 }
-
+nav ul li {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+nav ul li:hover {
+  opacity: 1;
+}
+#contact {
+  opacity: 1;
+}
 /* -----------------End Nav Bar Style ------------------------ */
 /* ------------------ Start Content Box Style -------------------- */
 .content {
@@ -52,6 +66,8 @@ h2 {
   background-color: rgba(0, 0, 0, 0.821);
   margin: 2% 6.5%;
   padding: 30px 25px;
+  position: relative;
+  top: 60px;
 }
 .topTxt {
   width: 100%;
@@ -99,10 +115,27 @@ h2 {
   width: 100%;
   height: fit-content;
   background-color: #17181e;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 45px 45px 1fr;
+  grid-template-areas:
+    "topL topL topL topL topL topL topR topR topR topR topR topR"
+    "centL centL centL centL centL centL centR centR centR centR centR centR"
+    "txt txt txt txt txt txt txt txt txt txt txt txt";
+  gap: 20px;
+}
+#field .inp1 {
+  grid-area: topL;
+}
+#field .inp2 {
+  grid-area: topR;
+}
+#field .inp3 {
+  grid-area: centL;
+}
+#field .inp4 {
+  grid-area: centR;
 }
 
 #field input {
@@ -113,33 +146,37 @@ h2 {
   border: none;
   transition: 0.5s;
 }
-#field input:focus,
-#field textarea:focus {
+#field input:focus {
   background-color: #373739;
 }
 #field textarea {
-  height: 150px;
+  grid-area: txt;
+  height: 200px;
   outline: none;
   border: none;
   background-color: #262627;
-  color: #fff;
   padding: 20px;
   transition: 0.5s;
 }
 #field button {
+  width: 170px;
   font-weight: 600;
   padding: 15px 20px;
-  margin: auto;
+  margin-top: 30px;
   outline: none;
   border: none;
   color: #fff;
-  background-color: var(--main-color);
+  background-color: #4b4bfb;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s;
 }
 #field button:hover {
-  background-color: #4949fa;
+  background-color: #3a3af9d0;
+}
+#field textarea:focus {
+  color: #fff;
+  background-color: #373739;
 }
 /* ---------------------------------------- */
 
@@ -159,11 +196,10 @@ h2 {
   align-items: center;
 }
 .conter .box .icon i {
-  color: var(--main-color);
+  color: #4b4bfb;
   font-size: 30px;
 }
 .conter .box .breif h3 {
-  font-family: "Raleway", "sans serif";
   font-size: 20px;
   color: #ffffff80;
   font-weight: 700;
@@ -173,7 +209,6 @@ h2 {
   color: #fff;
   line-height: 24px;
   letter-spacing: 1px;
-  font-size: 16px;
 }
 .conter .box .breif .socialLinks a {
   text-decoration: none;
@@ -187,10 +222,24 @@ h2 {
 .conter .box .breif .socialLinks a i:hover {
   color: #ffffff90;
 }
-
 /* ------------------------------------------------------ */
 
 @media only screen and (max-width: 768px) {
+  .content {
+    width: 100%;
+    margin: 25px 0;
+  }
+  .conter {
+    display: flex;
+    flex-direction: column;
+  }
+  .conter .box {
+    width: 100%;
+  }
+  .conter #field {
+    display: flex;
+    flex-direction: column;
+  }
   .collapse ul li {
     transition: 0.5s;
   }
@@ -261,5 +310,36 @@ h2 {
   #checkbox:checked + .toggle {
     transition-duration: 0.5s;
     transform: rotate(180deg);
+  }
+  nav h2 {
+    font-size: 25px;
+  }
+  .conter .box {
+    width: 100%;
+  }
+  .email {
+    font-size: 15px;
+  }
+}
+/* ------------------------------ Desktop Style ----------------------------- */
+@media screen and (min-width: 993px) {
+  .nav-item {
+    position: relative;
+  }
+  .nav-item::after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+  }
+  #contact::after {
+    width: 30%;
+  }
+  .nav-item:hover::after {
+    width: 30%;
   }
 }

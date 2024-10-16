@@ -34,15 +34,28 @@
 /* -----------------Start Nav Bar Style ------------------------ */
 nav {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
 }
-
-h2 {
+.container {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 999999999999999999999999999999;
+}
+nav h2 {
   color: #fff;
   font-size: 30px;
   font-weight: bold;
 }
-
+nav ul li {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+nav ul li:hover {
+  opacity: 1;
+}
+#resume {
+  opacity: 1;
+}
 /* -----------------End Nav Bar Style ------------------------ */
 /* -----------------End Nav Bar Style ------------------------ */
 /* ------------------ Start Content Box Style -------------------- */
@@ -52,6 +65,8 @@ h2 {
   background-color: rgba(0, 0, 0, 0.9);
   margin: 2% 6.5%;
   padding: 30px 25px;
+  position: relative;
+  top: 60px;
 }
 .topTxt {
   width: 100%;
@@ -159,31 +174,15 @@ h2 {
 .conter #two::after {
   height: 80%;
 }
+
 /* ------------------ End Content Box Style -------------------- */
 
-/* ------------------------------------------------------ */
-/* @media only screen and (min-width: 768px) {
-  .collapse ul li {
-    position: relative;
-  }
-  .collapse ul li::after {
-    position: absolute;
-    content: "";
-    bottom: -5px;
-    left: 50px;
-    background-color: var(--main-color);
-    width: 0;
-    height: 3px;
-    transition: 0.5s;
-  }
-  .collapse ul li:hover::after {
-    width: 30%;
-  }
-  .collapse ul li:nth-child(3)::after {
-    width: 30%;
-  }
-} */
+/* -------------------------- Phone Style  ---------------------------- */
 @media only screen and (max-width: 768px) {
+  .content {
+    width: 100%;
+    margin: 25px 0;
+  }
   .collapse ul li {
     transition: 0.5s;
   }
@@ -254,5 +253,143 @@ h2 {
   #checkbox:checked + .toggle {
     transition-duration: 0.5s;
     transform: rotate(180deg);
+  }
+  nav h2 {
+    font-size: 25px;
+  }
+  .conter {
+    flex-direction: column;
+  }
+  .conter .box {
+    width: 100%;
+  }
+  .conter #one::after {
+    height: 90%;
+  }
+  .conter #three::after {
+    height: 80%;
+  }
+  .box h2 {
+    font-size: 25px;
+  }
+  #three h3 {
+    font-size: 20px;
+  }
+  .topTxt p {
+    font-size: 30px;
+  }
+  #one h3 {
+    font-size: 27px;
+  }
+  #two h3 {
+    font-size: 22px;
+  }
+}
+/* -------------------------- Tablet Style -------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .collapse ul li {
+    transition: 0.5s;
+  }
+  .collapse ul li:hover {
+    background-color: #cccccc22;
+  }
+  .collapse ul li:nth-child(3) {
+    background-color: #cccccc22;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  #checkbox {
+    display: none;
+  }
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+  nav h2 {
+    padding-left: 17px;
+  }
+  .conter #one::after {
+    height: 85%;
+  }
+  .conter #three::after {
+    height: 70%;
+  }
+  .conter #four::after {
+    height: 78%;
+  }
+}
+/* ------------------------------ Desktop Style ----------------------------- */
+@media screen and (min-width: 993px) {
+  .nav-item {
+    position: relative;
+  }
+  .nav-item::after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+  }
+  #resume::after {
+    width: 30%;
+  }
+  .nav-item:hover::after {
+    width: 30%;
   }
 }
