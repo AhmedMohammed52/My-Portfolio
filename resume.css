@@ -104,7 +104,7 @@ nav ul li:hover {
   justify-content: space-between;
 }
 .conter .box {
-  width: 46%;
+  /* width: 100%; */
   height: fit-content;
   padding-left: 20px;
   margin: 20px 0;
@@ -151,6 +151,15 @@ nav ul li:hover {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+}
+.trainningBox::after {
+  position: absolute;
+  content: "";
+  top: 80px;
+  left: 0;
+  background-color: #4b4bfb;
+  width: 3px;
+  height: 80%;
 }
 .box h4 {
   margin: 15px 0 10px;
